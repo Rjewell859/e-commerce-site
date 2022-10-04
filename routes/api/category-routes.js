@@ -43,7 +43,6 @@ router.get('/:id', async (req, res) => {
 router.post('/', (req, res) => {
   Category.create(req.body)
     .then((category) => {
-      // if no product tags, just respond
       res.status(200).json(category);
     })
     .catch((err) => {
@@ -60,7 +59,7 @@ router.put('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-    if (!categoryData) {
+    if (!categoryData[0]) {
       res.status(404).json({
         message: 'No category with this id!'
       });
