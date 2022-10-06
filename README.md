@@ -7,7 +7,6 @@
 [Demo](#demo)
 [Contact](#contact)
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Description
 
@@ -24,9 +23,9 @@ Start the server and make requests with insomnia to test out the functionality o
 
 ### Demo
 
-Demonstration Video: 
+Demonstration Video Link: 
 
-
+https://drive.google.com/file/d/1nanGn_hLrqM3c64_oACMU4WZRYtLInyw/view
 
 #### Contact
 
