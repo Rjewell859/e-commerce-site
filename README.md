@@ -10,7 +10,7 @@
 
 ## Description
 
-This project is the back end for an ecommerce website. It uses MySQL through sequelize to store information. The e-commerce-site keeps track of products, categorys, and tags. Each product has a name, category, stock and tags. Categories have names and products and tags have names and products. All routes are functional and data can be succesfully created, updated, retrieved, or deleted. 
+This project is the back end for an ecommerce website. It uses MySQL through sequelize to store information. The e-commerce-site keeps track of products, categories, and tags. Each product has a name, category, stock and tags. Categories have names and products and tags have names and products. All routes are functional and data can be succesfully created, updated, retrieved, or deleted. This can be seen in the demonstration video below.
 
 ## Installation
 
