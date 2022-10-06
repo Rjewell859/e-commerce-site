@@ -6,6 +6,8 @@ const {
 
 // The `/api/categories` endpoint
 
+// Gets all categories their included products
+
 router.get('/', async (req, res) => {
   try {
     const categoryData = await Category.findAll({
@@ -18,6 +20,8 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Gets a category by id and its products
 
 router.get('/:id', async (req, res) => {
   try {
@@ -33,12 +37,13 @@ router.get('/:id', async (req, res) => {
       });
       return;
     }
-
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+// Creates a new category 
 
 router.post('/', (req, res) => {
   Category.create(req.body)
@@ -51,6 +56,8 @@ router.post('/', (req, res) => {
     });
 
 });
+
+// Update a category name
 
 router.put('/:id', async (req, res) => {
   try {
@@ -70,6 +77,8 @@ router.put('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Delete a category by id
 
 router.delete('/:id', async (req, res) => {
   try {

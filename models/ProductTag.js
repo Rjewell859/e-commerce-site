@@ -6,6 +6,7 @@ class ProductTag extends Model {}
 
 ProductTag.init(
   {
+    // Product tag id
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -13,6 +14,7 @@ ProductTag.init(
       autoIncrement: true,
       
     },
+    // Product id of product tag, refrences id in Product
     product_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -21,6 +23,7 @@ ProductTag.init(
       },
       
     },
+    // Tag id of product tag, refrences id in Tag
     tag_id: {
       type: DataTypes.INTEGER,
       references: {

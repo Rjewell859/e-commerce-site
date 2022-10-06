@@ -7,6 +7,8 @@ const {
 
 // The `/api/tags` endpoint
 
+// Get all tags
+
 router.get('/', async (req, res) => {
   try {
     const tagData = await Tag.findAll({
@@ -19,6 +21,8 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Get a tag by id
 
 router.get('/:id', async (req, res) => {
   try {
@@ -41,10 +45,11 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// Create a new tag
+
 router.post('/', (req, res) => {
   Tag.create(req.body)
     .then((tag) => {
-      // if no product tags, just respond
       res.status(200).json(tag);
     })
     .catch((err) => {
@@ -54,6 +59,7 @@ router.post('/', (req, res) => {
 
 });
 
+// Update a tag by id
 
 router.put('/:id', async (req, res) => {
   try {
@@ -74,6 +80,8 @@ router.put('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// Delete a tag by id
 
 router.delete('/:id', async (req, res) => {
   try {

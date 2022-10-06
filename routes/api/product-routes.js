@@ -3,7 +3,8 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
 
-// get all products
+// Get all products with their category and tags
+
 router.get('/', async (req, res) => {
   try {
     const productData = await Product.findAll({
@@ -16,7 +17,8 @@ router.get('/', async (req, res) => {
   }
 });
 
-// get one product
+// Get one product by id
+
 router.get('/:id', async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
@@ -36,16 +38,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// create new product
+// Create a new product
 router.post('/', (req, res) => {
-  /* req.body should look like this...
-    {
-      product_name: "Basketball",
-      price: 200.00,
-      stock: 3,
-      tagIds: [1, 2, 3, 4]
-    }
-  */
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
@@ -68,8 +62,8 @@ router.post('/', (req, res) => {
     });
 });
 
+// Update product data
 router.put('/:id', (req, res) => {
-  // update product data
   Product.update(req.body, {
     where: {
       id: req.params.id,
@@ -108,6 +102,8 @@ router.put('/:id', (req, res) => {
       res.status(400).json(err);
     });
 });
+
+// Delete a product by id
 
 router.delete('/:id', async (req, res) => {
   try {
